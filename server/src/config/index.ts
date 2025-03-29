@@ -28,10 +28,12 @@ if (process.env.DATABASE_URL) {
   const url = new URL(process.env.DATABASE_URL);
   dbConfig.DB_NAME = url.pathname.slice(1);
   dbConfig.DB_USER = url.username;
-  dbConfig.DB_PASSWORD = url.password;
+  // Explicitly decode the password:
+  dbConfig.DB_PASSWORD = decodeURIComponent(url.password);
   dbConfig.DB_HOST = url.hostname;
   dbConfig.DB_PORT = parseInt(url.port || '5432');
 }
+
 
 const config = {
   // Server configuration
@@ -59,6 +61,17 @@ const config = {
   // Client URL (for CORS and redirects)
   CLIENT_URL: process.env.CLIENT_URL || 'http://localhost:3001',
 };
+
+
+console.log({
+  DB_USER: config.DB_USER,
+  DB_HOST: config.DB_HOST,
+  DB_NAME: config.DB_NAME,
+  DB_PORT: config.DB_PORT,
+  DB_PASSWORD: config.DB_PASSWORD,
+});
+
+
 
 // Validate required environment variables
 const requiredEnvVars = ['DB_NAME', 'DB_USER', 'DB_PASSWORD', 'DB_HOST', 'JWT_SECRET'];
