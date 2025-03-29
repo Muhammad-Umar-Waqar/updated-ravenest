@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/images/RaveNest-Logo.png" alt="RaveNest Logo" width="200"/>
+  <img src="src/assets/images/RaveNest-Logo.png" alt="RaveNest Logo" width="200"/>
 </p>
 
 # 🎸 RaveNest - Where Tech Mentorship Rocks! 🚀
@@ -12,7 +12,7 @@ RaveNest is where coding dreams come true! We're not just another mentorship pla
 
 Coming soon! Our app is getting ready for its world tour - stay tuned for the big launch! 
 
-![RaveNest Landing Page](assets/images/RaveNest-LandingPage.png)
+![RaveNest Landing Page](src/assets/images/RaveNest-LandingPage.png)
 *Welcome to where the magic happens - our sleek and intuitive landing page!*
 
 ## ✨ Features
